@@ -12,5 +12,5 @@ Após a instalação das dependências, execute o projeto.
 
 <code>npm start</code>
 
-Devido a necessidade de comunicação com o projeto star-wars-backend e por trabalharem com portas diferentes, o comando acima utilizada as configurações de proxy para executar a aplicação corretamente.
+Devido a necessidade de comunicação com o projeto <a href="https://github.com/renanramos/star-wars-backend">star-wars-backend</a> e por trabalharem com portas diferentes, o comando acima utilizada as configurações de proxy para executar a aplicação corretamente.
 
