@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from "@angular/forms";
 import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-login',
@@ -12,6 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   submitted: boolean = false;
+  user: User;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -30,8 +32,12 @@ export class LoginComponent implements OnInit {
   get u(){return this.loginForm.controls}
 
   onSubmit(){
-    this.submitted = true;
-    this.authService.login(this.u.username.value, this.u.password.value, (data)=>{
+    this.submitted = true; 
+    this.user = {
+      username: this.u.username.value,
+      password: this.u.password.value
+    }         
+    this.authService.login(this.user, (data)=>{
       this.router.navigateByUrl('/home')
     })
   }
