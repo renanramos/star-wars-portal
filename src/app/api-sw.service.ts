@@ -1,20 +1,19 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { callbackify } from 'util';
+import { environment } from './../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ApiSwService {
+export class ApiSwService {  
 
   constructor(
     private http: HttpClient
   ) { }
 
-  getPeople(callback){
-    return this.http.get<any>('https://swapi.co/api/people/').subscribe((data)=>{
-      callback(data)
-    })
+  getPeople(pageUrl: string) {
+    !pageUrl ? pageUrl = environment.urlPeople : pageUrl;    
+    return this.http.get<any>(pageUrl);
   }
 
   getStartShips(callback){

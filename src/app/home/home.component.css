@@ -1,5 +1,12 @@
+table tbody > tr{
+    cursor: pointer;
+}
+
+
 .personagens{
-    margin-top: 100px;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin: 100px 20px 50px 20px;    
+}
+
+#button-group{
+    text-align: center;
 }

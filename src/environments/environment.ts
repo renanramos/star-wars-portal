@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+
+
+  // SW API
+  urlPeople: 'https://swapi.co/api/people/',
+  urlStarship: 'https://swapi.co/api/starships/'
+
+
+
 };
 
 /*

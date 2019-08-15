@@ -1,7 +1,7 @@
 <app-navbar></app-navbar>
 <div class="personagens">
   <legend>Personagens</legend>
-  <table class="table">
+  <table class="table table-xm table-hover">
     <thead class="thead-dark">
       <tr>
         <th scope="col">#</th>
@@ -19,4 +19,12 @@
       </tr>
     </tbody>
   </table>
+  <div class="row mx-md-n12" id="button-group">
+    <div class="col px-md-6">
+      <button class="btn btn-primary" (click)="previousPage();" [disabled]="disabled">Previous</button>
+    </div>
+    <div class="col px-md-6">
+      <button class="btn btn-primary" (click)="nextPage();">Next</button>
+    </div>
+  </div>
 </div>
