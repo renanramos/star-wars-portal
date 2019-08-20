@@ -17,21 +17,16 @@ export class AuthService {
     private http: HttpClient
   ) { }
 
-  login(user: User, callback) {
+  login(user: User) {
 
     const headers = new HttpHeaders().set('Content-Type', 'application/json')
-    const params = new HttpParams({fromObject: {'username': user.username,'passord': user.password}});
+    const params = new HttpParams({fromObject: {'username': user.username,'password': user.password}});
     const options = {
       headers: headers,
       params: params
     }
     
-    return this.http.get<any>(`${this.basicUrl}${this.apiUrl}`, options ).subscribe((data) => {              
-      if(data){
-        localStorage.setItem('ACCESS_TOKEN',"access_token")
-      }
-      callback(data)
-    })
+    return this.http.get<any>(`${this.basicUrl}${this.apiUrl}`, options );
 
   }
 

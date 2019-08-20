@@ -6,17 +6,23 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeComponent } from './home/home.component';
-import { StarshipComponent } from './starship/starship.component';
+import { PeopleComponent } from './home/people/people.component';
+import { StarshipComponent } from './home/starship/starship.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { PaginationComponent } from './pagination/pagination.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    HomeComponent,
+    PeopleComponent,
     StarshipComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent,
+    PaginationComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
