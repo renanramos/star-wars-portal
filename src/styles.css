@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    width: 100%;
+    height: auto;
+    padding-bottom: 20px;
+}
+
+table{
+    table-layout: fixed;
+    background-color: white;
+}
+
+table td{
+    line-height: 10px;
+}
+
+table thead > tr{
+    color: yellow !important;
+    background-color: #212529 !important;
+}
+
+table tbody > tr{
+    cursor: pointer;
+}
+
+table tbody > tr:hover{
+    color: aliceblue !important;
+    background-color: #212529 !important;
+}
+
+tbody tr td:first-child{
+    width: 3%;
+}
+
+.table .thead-dark th{
+    color: yellow !important;
+}
