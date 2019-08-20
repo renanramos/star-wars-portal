@@ -1,0 +1,8 @@
+
+#button-group{
+    text-align: center;
+}
+
+#button-group .btn:disabled{
+    cursor: not-allowed;
+}
