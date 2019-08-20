@@ -1,3 +1,15 @@
 .container{
-    margin-top: 10%;
+    margin-top: 8%;
+}
+
+img{
+    margin-bottom: 10px;
+}
+
+label{
+    font-weight: 800;
+}
+
+.btn-login{    
+    margin: 0 10vw;
 }

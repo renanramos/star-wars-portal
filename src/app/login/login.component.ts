@@ -33,12 +33,26 @@ export class LoginComponent implements OnInit {
 
   onSubmit(){
     this.submitted = true; 
+    
     this.user = {
       username: this.u.username.value,
       password: this.u.password.value
     }         
-    this.authService.login(this.user, (data)=>{
-      this.router.navigateByUrl('/home')
+    
+    let userPromise = this.authService.login(this.user).toPromise();
+    
+    userPromise.then(data => {
+       let user = JSON.parse(data);       
+       if ( user[0] !== undefined) {          
+          localStorage.setItem('ACCESS_TOKEN', `${user[0].user_name}`)
+          this.router.navigate(['home']);
+       } else {
+         this.router.navigate(['login']);
+       }
+    })
+
+    userPromise.catch(err => {
+      this.router.navigate(['login']);
     })
   }
 

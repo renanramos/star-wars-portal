@@ -2,6 +2,9 @@
     <div class="row">
         <div class="col-sm"></div>
         <div class="col-md">
+            <div class="text-center">
+                <img src="./../../assets/logo.png" class="rounded" alt="Star Wars">
+            </div>
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="username">User</label>
@@ -13,7 +16,9 @@
                     <input type="password" class="form-control" id="password" formControlName="password" name="password"
                         placeholder="password" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Acessar</button>
+                <div class="btn-login">
+                    <button type="submit" class="btn btn-primary">Acessar</button>
+                </div>
             </form>
         </div>
         <div class="col-sm"></div>

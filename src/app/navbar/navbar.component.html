@@ -1,9 +1,7 @@
-<ul class="nav nav-tabs">
-  <li class="nav-item">
-    <a class="nav-link" href="/home">Personagens</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="/starship">Naves</a>
-  </li>
+<ul class="nav nav-tabs justify-content-end">
+  <span>
+      {{ usuario }}
+      <i class="fas fa-user-circle"></i> 
+  </span>  
   <a class="nav-link" (click)="logout();">Sair</a>
 </ul>
