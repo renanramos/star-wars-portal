@@ -1,0 +1,25 @@
+<div class="starships">
+  <legend>Naves</legend>
+  <table class="table table-xm table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Modelo</th>
+      </tr>
+    </thead>
+    <tbody *ngIf="!showSpinner">
+      <tr *ngFor="let s of starships; let i = index">
+        <td>{{i + index}}</td>
+        <td>{{s.name}}</td>
+        <td>{{s.model}}</td>
+      </tr>
+    </tbody>
+  </table>
+  <ng-container *ngIf="!showSpinner">
+    <app-pagination [disabledNext]="disabledNext" [disabledPrevious]="disabledPrevious"
+      (changePage)="handlePagination($event);">
+    </app-pagination>
+  </ng-container>
+  <app-spinner *ngIf="showSpinner"></app-spinner>
+</div>
