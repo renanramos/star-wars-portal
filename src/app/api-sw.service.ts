@@ -16,9 +16,8 @@ export class ApiSwService {
     return this.http.get<any>(pageUrl);
   }
 
-  getStartShips(callback){
-    return this.http.get<any>('https://swapi.co/api/starships/').subscribe((data) => {
-      callback(data)
-    })
+  getStartShips(pageUrl: string){
+    pageUrl = !pageUrl ? environment.urlStarship : pageUrl;
+    return this.http.get<any>(pageUrl);
   }
 }
