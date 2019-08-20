@@ -1,12 +1,20 @@
-table tbody > tr{
+.my-cards{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+a:hover{
+    text-decoration: none;
     cursor: pointer;
 }
 
-
-.personagens{
-    margin: 100px 20px 50px 20px;    
+i{    
+    margin-top: 10px;
+    font-size: 52px;
+    vertical-align: middle;
 }
 
-#button-group{
-    text-align: center;
+.card:hover{
+    color: yellow;
+    background-color: #212529;
 }

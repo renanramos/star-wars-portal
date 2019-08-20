@@ -1,30 +1,37 @@
 <app-navbar></app-navbar>
-<div class="personagens">
-  <legend>Personagens</legend>
-  <table class="table table-xm table-hover">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nome</th>
-        <th scope="col">Gênero</th>
-        <th scope="col">Altura (cm)</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let p of personagens; let i = index">
-        <td>{{i + 1}}</td>
-        <td>{{p.name}}</td>
-        <td>{{p.gender}}</td>
-        <td>{{p.height}}</td>
-      </tr>
-    </tbody>
-  </table>
-  <div class="row mx-md-n12" id="button-group">
-    <div class="col px-md-6">
-      <button class="btn btn-primary" (click)="previousPage();" [disabled]="disabled">Previous</button>
+<div class="container-fluid">
+  <div class="row my-cards">
+    <div class="col-2"></div>
+    <div class="col-4">
+      <a (click)="showPeopleTableOnClick();">
+        <div class="card text-center">
+          <div class="card-img-top">
+            <i class="fas fa-user-astronaut"></i>
+          </div>
+          <div class="card-body">
+            Personagens
+          </div>
+        </div>
+      </a>
     </div>
-    <div class="col px-md-6">
-      <button class="btn btn-primary" (click)="nextPage();">Next</button>
+    <div class="col-4">
+      <a (click)="showStarshipTableOnClick();">
+        <div class="card text-center">
+          <div class="card-img-top">
+            <i class="fas fa-rocket"></i>
+          </div>
+          <div class="card-body">
+            Naves
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="col-2"></div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+      <app-people *ngIf="showPeopleTable"></app-people>
+      <app-starship *ngIf="showStarshipTable"></app-starship>
     </div>
   </div>
 </div>

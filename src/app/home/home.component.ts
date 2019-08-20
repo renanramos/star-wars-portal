@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiSwService } from '../api-sw.service';
 
 @Component({
   selector: 'app-home',
@@ -8,35 +7,22 @@ import { ApiSwService } from '../api-sw.service';
 })
 export class HomeComponent implements OnInit {
 
-  personagens: any = []
-  next: string;
-  previous = '';
-  disabled = true;
+  showPeopleTable = false;
+  showStarshipTable = false;
 
-  constructor(
-    private apiSW: ApiSwService
-  ) { }
+  constructor() { }
 
   ngOnInit() {
-    this.loadPersonagens('');
-    
   }
 
-  loadPersonagens(nextPage: string) {
-    this.apiSW.getPeople(nextPage).subscribe(people => {
-      this.personagens = people.results;
-      this.next = people.next;   
-      this.previous = people.previous !== null ? people.previous : '';
-      this.disabled = this.previous.length > 0 ? false : true;
-    });
+  showPeopleTableOnClick(){
+    this.showPeopleTable = true;    
+    this.showStarshipTable = false;
   }
 
-  nextPage() {
-    this.loadPersonagens(this.next);
-  }
-
-  previousPage(){
-    this.loadPersonagens(this.previous);
+  showStarshipTableOnClick(){
+    this.showStarshipTable = true;
+    this.showPeopleTable = false;    
   }
 
 }
