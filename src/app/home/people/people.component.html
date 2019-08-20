@@ -1,0 +1,31 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12">
+      <legend>Personagens</legend>
+        <table class="table table-xm table-hover">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Nome</th>
+              <th scope="col">Gênero</th>
+              <th scope="col">Altura (cm)</th>
+            </tr>
+          </thead>
+          <tbody *ngIf="!showSpinner">
+            <tr *ngFor="let p of personagens; let i = index">
+              <td>{{i + index}}</td>
+              <td>{{p.name}}</td>
+              <td>{{p.gender}}</td>
+              <td>{{p.height}}</td>
+            </tr>
+          </tbody>
+        </table>      
+        <ng-container *ngIf="!showSpinner">
+          <app-pagination [disabledNext]="disabledNext" [disabledPrevious]="disabledPrevious"
+            (changePage)="handlePagination($event);">
+          </app-pagination>
+        </ng-container>
+      <app-spinner *ngIf="showSpinner"></app-spinner>
+    </div>
+  </div>
+</div>
