@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
     let userPromise = this.authService.login(this.user).toPromise();
     
     userPromise.then(data => {
-       let user = JSON.parse(data);       
+       let user = data;
        if ( user[0] !== undefined) {          
           localStorage.setItem('ACCESS_TOKEN', `${user[0].user_name}`)
           this.router.navigate(['home']);
