@@ -12,6 +12,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SpinnerComponent } from './spinner/spinner.component';
+import { ViewDetailsComponent } from './home/people/view-details/view-details.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SpinnerComponent } from './spinner/spinner.component';
     NavbarComponent,
     HomeComponent,
     PaginationComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    ViewDetailsComponent
   ],
   imports: [
     BrowserModule,
