@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiSwService } from '../../api-sw.service';
-import { forkJoin } from 'rxjs';
+
+declare var $: any;
 
 @Component({
   selector: 'app-people',
@@ -16,13 +17,14 @@ export class PeopleComponent implements OnInit {
   disabledNext = false;
   index = 1;
   showSpinner = true;
+  person: any;
 
   constructor(
     private apiSW: ApiSwService
   ) { }
 
   ngOnInit() {
-    this.loadPersonagens('');
+    this.loadPersonagens('');    
   }
 
   loadPersonagens(nextPage: string) {
@@ -36,7 +38,6 @@ export class PeopleComponent implements OnInit {
       this.disabledPrevious = this.enableButton(people.previous);
       this.disabledNext = this.enableButton(people.next);
     }).catch(err => {
-      console.log(err);
       this.showSpinner = false;
     })
     .finally(() => {
@@ -65,4 +66,8 @@ export class PeopleComponent implements OnInit {
     this.index += numero;
   }
 
+  openModalDetails(people: any) {
+    this.person = people;
+    $('#peopleModal').modal('show');
+  }
 }

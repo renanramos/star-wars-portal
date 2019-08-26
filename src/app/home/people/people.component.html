@@ -9,14 +9,18 @@
               <th scope="col">Nome</th>
               <th scope="col">Gênero</th>
               <th scope="col">Altura (cm)</th>
+              <th scope="col">Visualizar</th>
             </tr>
           </thead>
           <tbody *ngIf="!showSpinner">
-            <tr *ngFor="let p of personagens; let i = index">
+            <tr *ngFor="let p of personagens; let i = index" (click)="openModalDetails(p);">
               <td>{{i + index}}</td>
               <td>{{p.name}}</td>
               <td>{{p.gender}}</td>
               <td>{{p.height}}</td>
+              <td>
+                <i class="fas fa-info-circle"></i>
+              </td>
             </tr>
           </tbody>
         </table>      
@@ -28,4 +32,8 @@
       <app-spinner *ngIf="showSpinner"></app-spinner>
     </div>
   </div>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" id="peopleModal">
+  <app-view-details *ngIf="person" [person]="person"></app-view-details>
 </div>
