@@ -6,13 +6,17 @@
         <th scope="col">#</th>
         <th scope="col">Nome</th>
         <th scope="col">Modelo</th>
+        <th scope="col">Visualizar</th>
       </tr>
     </thead>
     <tbody *ngIf="!showSpinner">
-      <tr *ngFor="let s of starships; let i = index">
+      <tr *ngFor="let s of starships; let i = index" >
         <td>{{i + index}}</td>
         <td>{{s.name}}</td>
         <td>{{s.model}}</td>
+        <td>
+          <i class="fas fa-info-circle"></i>
+        </td>
       </tr>
     </tbody>
   </table>
