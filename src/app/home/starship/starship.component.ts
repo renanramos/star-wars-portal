@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiSwService } from '../../api-sw.service';
 
+declare var $: any;
+
 @Component({
   selector: 'app-starship',
   templateUrl: './starship.component.html',
@@ -9,6 +11,7 @@ import { ApiSwService } from '../../api-sw.service';
 export class StarshipComponent implements OnInit {
 
   starships: any = [];
+  starship: any;
   next: string;
   previous = '';
   disabledPrevious = true;
@@ -62,6 +65,11 @@ export class StarshipComponent implements OnInit {
 
   indexPagina(numero) {
     this.index += numero;
+  }
+
+  openModalStarship(starship: any){
+    this.starship = starship;
+    $('#starshipModal').modal('show');
   }
 
 }

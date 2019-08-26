@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody *ngIf="!showSpinner">
-      <tr *ngFor="let s of starships; let i = index" >
+      <tr *ngFor="let s of starships; let i = index" (click)="openModalStarship(s);">
         <td>{{i + index}}</td>
         <td>{{s.name}}</td>
         <td>{{s.model}}</td>
@@ -27,3 +27,7 @@
   </ng-container>
   <app-spinner *ngIf="showSpinner"></app-spinner>
 </div>
+
+<div class="modal" tabindex="-1" role="dialog" id="starshipModal">
+    <app-view-details-starship *ngIf="starship" [starship]="starship"></app-view-details-starship>
+  </div>
