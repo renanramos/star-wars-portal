@@ -1,0 +1,35 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">{{ person.name }}</h5>
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="person-info">
+        <div class="person-info-labels">
+          <label>Birth Year</label>
+          <label>Eye color</label>
+          <label>Gender</label>
+          <label>Hair color</label>
+          <label>Height</label>
+          <label>Homeworld</label>
+          <label>Mass</label>
+        </div>
+        <div class="person-info-content">          
+          <span>{{ person.birth_year }}</span>
+          <span>{{ person.eye_color }}</span>
+          <span>{{ person.gender }}</span>
+          <span>{{ person.hair_color }}</span>
+          <span>{{ person.height }}</span>
+          <span>{{ person.homeworld }}</span>
+          <span>{{ person.mass }}</span>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+    </div>
+  </div>
+</div>

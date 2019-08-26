@@ -1,0 +1,22 @@
+.person-info{
+    display: inline-block;
+}
+
+.person-info-labels{
+    width: 20%;
+    display: block;
+    line-height: 29px;
+    float: left;
+    font-weight: 500;
+    text-align: right;
+    margin-left: 100px;
+}
+
+.person-info-content span{
+    width: 50%;
+    line-height: 36px;
+    float: right;
+    text-align: left;
+    font-weight: 400;
+}
+
