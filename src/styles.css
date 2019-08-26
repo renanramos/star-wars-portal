@@ -35,3 +35,17 @@ tbody tr td:first-child{
 .table .thead-dark th{
     color: yellow !important;
 }
+
+tbody td:last-child{
+    text-align: center;
+    font-size: 16px;
+    color: whitesmoke;
+}
+
+tbody td:last-child:hover{
+    display: block;
+}
+
+thead th:last-child{
+    text-align: center;
+}
