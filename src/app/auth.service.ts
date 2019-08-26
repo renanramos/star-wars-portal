@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
-import { map } from "rxjs/operators";
+import { environment } from './../environments/environment';
 import { User } from './user';
 
 @Injectable({
@@ -8,9 +8,9 @@ import { User } from './user';
 })
 export class AuthService {
 
-  private host = `http://localhost:`
-  private port = `5000`
-  private apiUrl = `/users/login`
+  private host = environment.host;
+  private port = environment.port;
+  private apiUrl = environment.apiUrl;
   private basicUrl = `${this.host}${this.port}`
 
   constructor(
