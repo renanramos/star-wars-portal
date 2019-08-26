@@ -12,7 +12,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { PaginationComponent } from './pagination/pagination.component';
 import { SpinnerComponent } from './spinner/spinner.component';
-import { ViewDetailsComponent } from './home/people/view-details/view-details.component';
+import { ViewDetailsPersonComponent } from './home/people/view-details-person/view-details-person.component';
+import { ViewDetailsStarshipComponent } from './home/starship/view-details-starship/view-details-starship.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ViewDetailsComponent } from './home/people/view-details/view-details.co
     HomeComponent,
     PaginationComponent,
     SpinnerComponent,
-    ViewDetailsComponent
+    ViewDetailsPersonComponent,
+    ViewDetailsStarshipComponent
   ],
   imports: [
     BrowserModule,
