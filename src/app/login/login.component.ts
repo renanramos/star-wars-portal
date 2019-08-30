@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '../auth.service';
 import { User } from '../user';
 
+declare var $: any;
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -29,26 +31,27 @@ export class LoginComponent implements OnInit {
 
   }
 
-  get u(){return this.loginForm.controls}
+  get u() { return this.loginForm.controls }
 
-  onSubmit(){
-    this.submitted = true; 
-    
+  onSubmit() {
+    this.submitted = true;
+
     this.user = {
       username: this.u.username.value,
       password: this.u.password.value
-    }         
-    
+    }
+
     let userPromise = this.authService.login(this.user).toPromise();
-    
+
     userPromise.then(data => {
-       let user = data;
-       if ( user[0] !== undefined) {          
-          localStorage.setItem('ACCESS_TOKEN', `${user[0].user_name}`)
-          this.router.navigate(['home']);
-       } else {
-         this.router.navigate(['login']);
-       }
+      let user = data;
+      if (data.status === undefined) {
+        localStorage.setItem('ACCESS_TOKEN', `${user[0].user_name}`)
+        this.router.navigate(['home']);
+      } else {
+        $('#loginErrorModal').modal('show');
+        this.router.navigate(['login']);
+      }
     })
 
     userPromise.catch(err => {
