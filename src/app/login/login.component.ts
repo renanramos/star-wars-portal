@@ -16,6 +16,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   submitted: boolean = false;
   user: User;
+  error = {};
 
   constructor(
     private formBuilder: FormBuilder,
@@ -49,9 +50,12 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('ACCESS_TOKEN', `${user[0].user_name}`)
         this.router.navigate(['home']);
       } else {
-        $('#loginErrorModal').modal('show');
-        this.router.navigate(['login']);
+        throw new ErrorEvent('error', data);
       }
+    }).catch((error) => {
+      this.error = error;
+      $('#loginErrorModal').modal('show');
+      this.router.navigate(['login']);
     })
 
     userPromise.catch(err => {

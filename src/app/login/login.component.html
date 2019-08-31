@@ -28,9 +28,13 @@
 <div class="modal" tabindex="-1" role="dialog" id="loginErrorModal" >
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">Erro!</div>
+            <div class="modal-header">
+                <h4 class="modal-title text-danger">Ops!</h4>
+            </div>
             <div class="modal-body">
-                    {{ data.message }}
+                <div *ngIf="error" class="text-danger">
+                    {{ error.message }}
+                </div>
             </div>
         </div>
     </div>
